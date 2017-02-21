@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtRead = new System.Windows.Forms.TextBox();
+            this.btnRead = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txtSend = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -48,33 +50,53 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // textBox1
+            // txtRead
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtRead.Location = new System.Drawing.Point(131, 142);
+            this.txtRead.Name = "txtRead";
+            this.txtRead.Size = new System.Drawing.Size(100, 20);
+            this.txtRead.TabIndex = 1;
             // 
-            // button1
+            // btnRead
             // 
-            this.button1.Location = new System.Drawing.Point(270, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRead.Location = new System.Drawing.Point(270, 142);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(75, 23);
+            this.btnRead.TabIndex = 2;
+            this.btnRead.Text = "Read Voltage";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(270, 184);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 3;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // txtSend
+            // 
+            this.txtSend.Location = new System.Drawing.Point(131, 187);
+            this.txtSend.Name = "txtSend";
+            this.txtSend.Size = new System.Drawing.Size(100, 20);
+            this.txtSend.TabIndex = 4;
             // 
             // DAQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 284);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSend);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.btnRead);
+            this.Controls.Add(this.txtRead);
             this.Controls.Add(this.comboBox1);
             this.Name = "DAQ";
             this.Text = "DAQ";
+            this.Load += new System.EventHandler(this.DAQ_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,7 +106,9 @@
 
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtRead;
+        private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TextBox txtSend;
     }
 }

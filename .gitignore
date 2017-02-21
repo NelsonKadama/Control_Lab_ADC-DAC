@@ -1,0 +1,11 @@
+serial_sample/serial_sample/obj/
+serial_sample/serial_sample/bin/
+serial_sample/serial_sample/Properties/
+serial_sample/serial_sample/serial_sample.csproj.user
+serial_sample/serial_sample/serial_sample.csproj
+serial_sample/serial_sample/Program.cs
+serial_sample/serial_sample/Form1.resx
+serial_sample/serial_sample/DAQ.resx
+serial_sample/serial_sample.sln
+serial_sample/serial_sample.suo
+serial_sample/serial_sample/ControlLabDAC.cs
