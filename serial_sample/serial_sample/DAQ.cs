@@ -51,7 +51,10 @@ namespace WindowsFormsApplication1
             string clear;
             receiving = false;
 
-            send = txtSend.Text + 'q';
+            int selectedIndex = cmbChannel.SelectedIndex;
+            Object selectedItem = cmbChannel.SelectedItem;
+
+            send = selectedItem.ToString() + 'q';
             serialPort1.Write(send);
             clear = serialPort1.ReadLine();
             receiving = true;
@@ -59,7 +62,33 @@ namespace WindowsFormsApplication1
 
         private void DAQ_Load(object sender, EventArgs e)
         {
+            txtRead.Enabled = false;
+            btnSend.Enabled = false;
+        }
+
+        private void btnPort_Click(object sender, EventArgs e)
+        {
+            
+            serialPort1.PortName = txtPort.Text;
+
             serialPort1.Open();
+
+            string clear;
+            receiving = false;
+
+            send = "reset" + 'q';
+            serialPort1.Write(send);
+            clear = serialPort1.ReadLine();
+            receiving = true;
+
+            btnPort.Enabled = false;
+            btnSend.Enabled = true;
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
     }
