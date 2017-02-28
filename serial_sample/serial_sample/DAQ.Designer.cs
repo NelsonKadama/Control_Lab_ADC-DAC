@@ -50,12 +50,12 @@
             // 
             this.txtRead.Location = new System.Drawing.Point(131, 142);
             this.txtRead.Name = "txtRead";
-            this.txtRead.Size = new System.Drawing.Size(100, 20);
+            this.txtRead.Size = new System.Drawing.Size(170, 20);
             this.txtRead.TabIndex = 1;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(258, 187);
+            this.btnSend.Location = new System.Drawing.Point(307, 189);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 3;
@@ -93,14 +93,14 @@
             "6"});
             this.cmbChannel.Location = new System.Drawing.Point(131, 189);
             this.cmbChannel.Name = "cmbChannel";
-            this.cmbChannel.Size = new System.Drawing.Size(121, 21);
+            this.cmbChannel.Size = new System.Drawing.Size(170, 21);
             this.cmbChannel.TabIndex = 7;
             // 
             // txtPort
             // 
             this.txtPort.Location = new System.Drawing.Point(131, 43);
             this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(100, 20);
+            this.txtPort.Size = new System.Drawing.Size(170, 20);
             this.txtPort.TabIndex = 8;
             // 
             // label3
@@ -114,7 +114,7 @@
             // 
             // btnPort
             // 
-            this.btnPort.Location = new System.Drawing.Point(247, 40);
+            this.btnPort.Location = new System.Drawing.Point(307, 41);
             this.btnPort.Name = "btnPort";
             this.btnPort.Size = new System.Drawing.Size(75, 23);
             this.btnPort.TabIndex = 10;
@@ -124,7 +124,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(307, 249);
+            this.btnClose.Location = new System.Drawing.Point(307, 329);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 11;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 284);
+            this.ClientSize = new System.Drawing.Size(462, 364);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPort);
             this.Controls.Add(this.label3);
