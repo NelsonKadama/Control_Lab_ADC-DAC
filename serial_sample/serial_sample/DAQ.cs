@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
         private string input;
         private double input_voltage;
         private string send;
-        private Boolean receiving = true;
+        private Boolean receiving = true;   // used to check information is being sent or received
 
 
         public DAQ()
@@ -28,15 +28,15 @@ namespace WindowsFormsApplication1
         {
             if (receiving)
             {
-                input = serialPort1.ReadLine();
+                input = serialPort1.ReadLine();                     // reads data from serial port
                 this.Invoke(new EventHandler(displaydata_event));
             }
         }
 
         private void displaydata_event(object sender, EventArgs e)
         {
-            
-            txtRead.Text = input;
+
+            txtRead.Text = input;       // displays data read from serial port
             
         }
         
@@ -46,30 +46,35 @@ namespace WindowsFormsApplication1
             receiving = true;
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)      //pressed after user selects channel
         {
             string clear;
             receiving = false;
 
-            int selectedIndex = cmbChannel.SelectedIndex;
-            Object selectedItem = cmbChannel.SelectedItem;
-
-            send = selectedItem.ToString() + 'q';
+            send = "reset" + 'q';               // sent to arduino to clear previously selected channels
             serialPort1.Write(send);
             clear = serialPort1.ReadLine();
+            receiving = true;
+
+            int selectedIndex = cmbChannel.SelectedIndex;       //determines value selected from combobox
+            Object selectedItem = cmbChannel.SelectedItem;
+
+            send = selectedItem.ToString() + 'q';       //  'q' used to show end of transmission
+            serialPort1.Write(send);                    //sends combobox value via serial port
+            clear = serialPort1.ReadLine();             // clears serial port to read new value (value sent (channel) would be read otherwise)
             receiving = true;
         }
 
         private void DAQ_Load(object sender, EventArgs e)
         {
-            txtRead.Enabled = false;
-            btnSend.Enabled = false;
+            txtRead.Enabled = false;            // disables txt read so nothing can be written to it. strictly used to display values read
+            btnSend.Enabled = false;            // disables btnSend till COM port is selected
         }
 
         private void btnPort_Click(object sender, EventArgs e)
         {
-            
-            serialPort1.PortName = txtPort.Text;
+
+            serialPort1.PortName = txtPort.Text;        // port name (COMx)
 
             serialPort1.Open();
 
